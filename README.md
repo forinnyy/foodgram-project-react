@@ -47,7 +47,7 @@ POSTGRES_PASSWORD=postgres
 DB_HOST=db
 DB_PORT=5432
 ```
-4. Создать на сервере папку infra. В неё скопировать 
+4. Создать на сервере папку foodgram и в ней infra. В неё скопировать 
    - docker-compose.yml
    - nginx.conf
    - .env

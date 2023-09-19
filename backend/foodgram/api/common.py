@@ -51,4 +51,3 @@ def create_update_instance_recipe(recipe, ingredients, tags):
             TagRecipe(recipe=recipe, tag=tag)
         )
     TagRecipe.objects.bulk_create(obj_tag_recipe)
-    return

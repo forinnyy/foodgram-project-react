@@ -8,11 +8,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv(os.path.join(BASE_DIR.parent.parent, 'infra/.env'), verbose=True)
 
-SECRET_KEY = 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$'
+SECRET_KEY = os.getenv(
+    'SECRET_KEY',
+    default='django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$',
+)
 
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', default=True)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', default='*')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
