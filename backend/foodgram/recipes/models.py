@@ -6,12 +6,12 @@ from users.models import User
 
 class Ingredient(models.Model):
     name = models.CharField(
-        max_length=150,
+        max_length=255,
         verbose_name='Название ингредиента',
         db_index=True,
     )
     measurement_unit = models.CharField(
-        max_length=24,
+        max_length=255,
         verbose_name='Еденица измерения',
     )
 
@@ -26,7 +26,7 @@ class Ingredient(models.Model):
 
 class Tag(models.Model):
     name = models.CharField(
-        max_length=60,
+        max_length=255,
         verbose_name='Название тега',
         unique=True,
     )
@@ -56,12 +56,12 @@ class Tag(models.Model):
 
 class Recipe(models.Model):
     name = models.CharField(
-        max_length=150,
+        max_length=255,
         verbose_name='Название',
     )
     text = models.TextField(
         verbose_name='Текстовое описание',
-        max_length=3000,
+        max_length=255,
     )
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
