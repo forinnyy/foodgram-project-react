@@ -117,9 +117,8 @@ class RecipeReadSerializer(serializers.ModelSerializer):
         )
 
     def get_ingredients(self, obj):
-        return IngredientInRecipeSerializer(
-            obj.ingredients.all(), many=True
-        ).data
+        ingredients = IngredientRecipe.objects.filter(recipe=obj) 
+        return IngredientInRecipeSerializer(ingredients, many=True).data
 
     def get_is_favorited(self, obj):
         request = self.context.get('request')
