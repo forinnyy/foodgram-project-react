@@ -48,6 +48,6 @@ def create_update_instance_recipe(recipe, ingredients, tags):
 
     for tag in tags.values():
         obj_tag_recipe.append(
-            TagRecipe(recipe=recipe, tag=tag)
+            TagRecipe(recipe=recipe, tags=tag)
         )
     TagRecipe.objects.bulk_create(obj_tag_recipe)
