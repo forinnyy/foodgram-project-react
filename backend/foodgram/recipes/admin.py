@@ -36,7 +36,7 @@ class RecipeIngredientInline(admin.TabularInline):
 class RecipeAdmin(admin.ModelAdmin):
     list_display = ('pk', 'name', 'author', 'favorites_amount')
     search_fields = ('name', 'author')
-    list_filter = ('name', 'author', 'tag')
+    list_filter = ('name', 'author', 'tags')
     empty_value_display = settings.EMPTY_VALUE
     inlines = [
         RecipeIngredientInline,
