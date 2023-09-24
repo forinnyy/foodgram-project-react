@@ -180,13 +180,13 @@ class Favorite(models.Model):
             )
         ]
 
-    def __str__(self): 
-        return f'{self.user} - {self.recipe}' 
+    def __str__(self):
+        return f'{self.user} - {self.recipe}'
 
 
 class ShoppingCart(models.Model):
     user = models.ForeignKey(
-        User, 
+        User,
         related_name='shoppings',
         on_delete=models.CASCADE,
         verbose_name='Пользователь',
